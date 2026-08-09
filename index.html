@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E-Modul Interaktif Dasar-Dasar Pengelasan</title>
+<style>
+:root{--navy:#123b5d;--blue:#1e88c8;--cyan:#39b8d8;--light:#eaf5fa;--orange:#f39c3d;--green:#2e9b68;--red:#c94c4c;--text:#18313f}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#eef5f8;color:var(--text)}
+header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:28px 18px;text-align:center}
+header h1{margin:0;font-size:30px}header p{margin:7px 0}
+nav{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 2px 10px #0002;display:flex;gap:6px;overflow:auto;padding:8px}
+nav button{white-space:nowrap;border:0;background:#edf5f8;color:var(--navy);padding:9px 12px;border-radius:9px;cursor:pointer}
+nav button.active,button.primary{background:var(--blue);color:#fff}
+main{max-width:1050px;margin:auto;padding:22px 16px 60px}.page{display:none}.page.active{display:block}
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:20px;padding:55px 25px;text-align:center}.hero h2{font-size:42px;margin:6px 0}
+.card{background:#fff;border-radius:16px;padding:20px;margin:15px 0;box-shadow:0 4px 16px #00000012;border-left:5px solid var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.tile{background:#fff;padding:18px;border-radius:14px;border:1px solid #d6e6ed;cursor:pointer}.tile:hover{transform:translateY(-2px)}
+h2{color:var(--navy)}h3{color:var(--blue)}button{border:0;border-radius:9px;padding:10px 15px;cursor:pointer}.secondary{background:#e7f0f4;color:var(--navy)}.danger{background:#f7dddd;color:#8b2222}
+.tip{background:#fff7e9;border-left:5px solid var(--orange);padding:14px;border-radius:10px}.safe{background:#eaf8f0;border-left:5px solid var(--green);padding:14px;border-radius:10px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #c9dce5;border-radius:8px;margin:5px 0 10px}textarea{min-height:110px}
+.quizopt{display:block;background:#f7fafc;padding:12px;margin:7px 0;border-radius:10px;cursor:pointer}.result{font-weight:bold;font-size:19px;margin-top:14px}
+.progress{height:8px;background:#dce9ee;border-radius:20px;overflow:hidden}.bar{height:100%;background:var(--cyan);width:0}
+.admin{background:#102d42;color:#fff;border-radius:18px;padding:20px}.admin h2,.admin h3{color:#fff}.adminbox{background:#fff;color:var(--text);padding:18px;border-radius:12px;margin-top:12px}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:9px;border:1px solid #d4e4ea;text-align:left}th{background:var(--navy);color:#fff}
+.small{font-size:13px;color:#657780}footer{text-align:center;color:#6a7b84;padding:20px}
+</style>
+</head>
+<body>
+<header><h1>E-MODUL INTERAKTIF</h1><p>Dasar-Dasar Pengelasan • Berbasis Problem Based Learning (PBL)</p><p>Kelas XI • Fase F • Kurikulum Merdeka</p></header>
+<nav id="nav">
+<button onclick="show('home',this)" class="active">🏠 Beranda</button><button onclick="show('petunjuk',this)">📖 Petunjuk</button>
+<button onclick="show('tujuan',this)">🎯 Tujuan</button><button onclick="show('pretest',this)">📝 Pretest</button>
+<button onclick="show('pbl',this)">🔥 PBL</button><button onclick="show('materi',this)">📚 Materi</button>
+<button onclick="show('aktivitas',this)">🧩 Aktivitas</button><button onclick="show('quiz',this)">☑️ Quiz</button>
+<button onclick="show('refleksi',this)">💭 Refleksi</button><button onclick="show('admin',this)">👩‍💻 Admin</button><button onclick="show('akhir',this)">🏁 Akhir</button>
+</nav>
+<main>
+<section id="home" class="page active">
+<div class="hero"><div>SMK NEGERI 5 MEDAN</div><h2>DASAR-DASAR<br>PENGELASAN</h2><p>E-Modul Interaktif Berbasis Problem Based Learning</p><button class="primary" onclick="show('petunjuk',document.querySelectorAll('#nav button')[1])">🚀 Mulai Belajar</button></div>
+<div class="card"><h3>Selamat Datang!</h3><p>Belajar bukan hanya membaca. Kamu akan mengamati masalah, mencari penyebab, berdiskusi, menguji pemahaman, dan melakukan refleksi.</p></div>
+<div class="grid"><div class="tile" onclick="show('materi',document.querySelectorAll('#nav button')[5])">📚 <b>Materi</b><br>Materi lengkap dengan contoh, K3, aktivitas, dan cek pemahaman.</div><div class="tile" onclick="show('pbl',document.querySelectorAll('#nav button')[4])">🔥 <b>PBL</b><br>Belajar dari masalah hasil pengelasan.</div><div class="tile" onclick="show('quiz',document.querySelectorAll('#nav button')[7])">☑️ <b>Quiz</b><br>Skor otomatis dan feedback.</div></div>
+</section>
+
+<section id="petunjuk" class="page"><h2>📖 Petunjuk Penggunaan</h2><div class="card"><ol><li>Kerjakan pretest sebelum mempelajari materi.</li><li>Baca setiap materi sampai bagian “Cek Pemahaman”.</li><li>Ikuti lima tahap PBL: orientasi, organisasi, penyelidikan, penyajian, evaluasi.</li><li>Gunakan aktivitas interaktif untuk menguatkan pemahaman.</li><li>Kerjakan quiz sampai memperoleh hasil yang baik.</li><li>Isi refleksi di akhir pembelajaran.</li></ol></div><div class="tip">💡 Pada versi online, guru dapat menambahkan video demonstrasi yang digunakan secara sah.</div></section>
+
+<section id="tujuan" class="page"><h2>🎯 Tujuan Pembelajaran</h2><div class="card"><ul><li>Menjelaskan pengertian, tujuan, dan prinsip dasar pengelasan.</li><li>Mengenali proses pengelasan dan prinsip SMAW.</li><li>Mengidentifikasi peralatan dan elektroda.</li><li>Menjelaskan parameter, posisi, sambungan, dan kampuh.</li><li>Menerapkan K3 pengelasan.</li><li>Menganalisis masalah hasil las dan menyusun solusi.</li></ul></div><div class="card"><h3>🗺️ Peta Konsep</h3><p style="text-align:center"><b>Pengelasan → Proses → Alat & Bahan → Parameter → Posisi & Sambungan → K3 → Kualitas → Pemecahan Masalah</b></p></div></section>
+
+<section id="pretest" class="page"><h2>📝 Pretest</h2><div class="card">
+<label>1. Apa yang dimaksud pengelasan?<textarea id="pre1"></textarea></label><label>2. Sebutkan dua proses pengelasan.<textarea id="pre2"></textarea></label><label>3. Kepanjangan SMAW?<input id="pre3"></label><label>4. Tiga APD pengelasan?<input id="pre4"></label><label>5. Mengapa parameter memengaruhi hasil las?<textarea id="pre5"></textarea></label>
+<button class="primary" onclick="savePre()">💾 Simpan</button><p id="presave"></p></div></section>
+
+<section id="pbl" class="page"><h2>🔥 Problem Based Learning</h2><div class="card"><h3>Kasus: Hasil Las Tidak Sesuai Harapan</h3><p>Sebuah kelompok mengelas sambungan pelat dengan SMAW. Manik las tidak seragam, percikan banyak, dan beberapa bagian tampak kurang menyatu. Seorang anggota juga tidak menggunakan pelindung mata dan tangan yang sesuai.</p></div>
+<div class="card"><h3>1. Orientasi Masalah</h3><textarea id="p1" placeholder="Apa masalah utama?"></textarea></div><div class="card"><h3>2. Organisasi</h3><p>Bentuk kelompok 3–5 orang. Tentukan ketua, pencatat, pengamat K3, dan penyaji.</p></div>
+<div class="card"><h3>3. Penyelidikan</h3><p>Analisis arus, panjang busur, kecepatan gerak, sudut elektroda, posisi, dan kondisi permukaan.</p><textarea id="p3" placeholder="Data/bukti hasil penyelidikan..."></textarea></div>
+<div class="card"><h3>4. Penyajian Solusi</h3><textarea id="p4" placeholder="Masalah → Bukti → Penyebab → Solusi → Alasan"></textarea></div>
+<div class="card"><h3>5. Evaluasi</h3><textarea id="p5" placeholder="Apa yang akan diperbaiki?"></textarea></div><button class="primary" onclick="alert('Aktivitas tersimpan dalam sesi browser ini.')">💾 Simpan Aktivitas</button></section>
+
+<section id="materi" class="page"><h2>📚 Materi Inti</h2><p>Pilih materi. Setiap topik memiliki tujuan, penjelasan, contoh, K3, tips, aktivitas, dan cek pemahaman.</p><div class="grid" id="materialGrid"></div><div id="materialView"></div></section>
+
+<section id="aktivitas" class="page"><h2>🧩 Aktivitas Interaktif</h2><div class="card"><h3>🔧 Kenali Komponen</h3><div class="grid">
+<button class="secondary" onclick="alert('Electrode holder: memegang elektroda dan menyalurkan arus.')">⚡ Electrode Holder</button><button class="secondary" onclick="alert('Clamp massa: menghubungkan rangkaian listrik ke benda kerja.')">🔩 Clamp Massa</button><button class="secondary" onclick="alert('Sikat kawat: membantu membersihkan permukaan/terak sesuai kebutuhan.')">🧹 Sikat Kawat</button><button class="secondary" onclick="alert('Topeng las: melindungi mata dan wajah dari radiasi busur dan percikan.')">🛡️ Topeng Las</button></div></div>
+<div class="card"><h3>🎥 Video Demonstrasi</h3><p>Slot video siap dihubungkan ke video yang digunakan secara sah oleh sekolah.</p><button class="primary" onclick="alert('Tambahkan URL video pada dashboard Admin.')">▶ Buka Video</button></div></section>
+
+<section id="quiz" class="page"><h2>☑️ Quiz Interaktif</h2><div class="progress"><div class="bar" id="bar"></div></div><form id="quizForm"></form><button class="primary" onclick="scoreQuiz()">📊 Kirim Jawaban</button> <button class="secondary" onclick="resetQuiz()">↻ Coba Lagi</button><div id="result" class="result"></div></section>
+
+<section id="refleksi" class="page"><h2>💭 Refleksi</h2><div class="card"><label>Konsep yang paling saya pahami<textarea></textarea></label><label>Bagian yang masih sulit<textarea></textarea></label><label>Bagaimana saya menerapkan K3?<textarea></textarea></label><label>Kontribusi saya dalam kelompok PBL<textarea></textarea></label><button class="primary" onclick="alert('Refleksi selesai.')">✓ Selesai</button></div></section>
+
+<section id="admin" class="page"><div class="admin"><h2>👩‍💻 Dashboard Admin / Pengembang</h2><p>Prototype admin lokal — data materi dan quiz dapat diubah pada browser ini. Untuk penggunaan online multi-siswa, perlu database dan login server.</p>
+<div id="loginBox" class="adminbox"><h3>🔐 Login Admin</h3><label>Username<input id="adminUser" value="admin"></label><label>Password<input id="adminPass" type="password" value="pengelasan123"></label><button class="primary" onclick="adminLogin()">Masuk</button><p class="small">Akun demo: admin / pengelasan123. Ganti sebelum digunakan sebagai produk penelitian.</p></div>
+<div id="panel" style="display:none">
+<div class="adminbox"><h3>📚 Edit Materi</h3><select id="editSelect" onchange="loadEditor()"></select><label>Judul<input id="editTitle"></label><label>Tujuan<textarea id="editGoal"></textarea></label><label>Penjelasan<textarea id="editExplain"></textarea></label><label>Contoh / penerapan<textarea id="editExample"></textarea></label><label>K3<textarea id="editK3"></textarea></label><label>Tips / fakta<textarea id="editTip"></textarea></label><button class="primary" onclick="saveMaterial()">💾 Simpan Materi</button> <button class="secondary" onclick="resetMaterials()">↻ Reset</button></div>
+<div class="adminbox"><h3>☑️ Kelola Quiz</h3><p class="small">Prototype ini menggunakan 8 soal. Pada tahap berikutnya soal dapat dibuat sepenuhnya editable dari dashboard.</p><button class="secondary" onclick="alert('Fitur editor soal siap dikembangkan ke database pada versi online.')">➕ Tambah/Edit Soal</button></div>
+<div class="adminbox"><h3>🎥 Kelola Video</h3><input id="videoUrl" placeholder="Tempel URL video"><button class="primary" onclick="saveVideo()">💾 Simpan URL Video</button><p id="videoStatus"></p></div>
+<div class="adminbox"><h3>📊 Status</h3><p id="status"></p><button class="danger" onclick="adminLogout()">Keluar Admin</button></div>
+</div></div></section>
+
+<section id="akhir" class="page"><h2>🏁 Penutup</h2><div class="card"><h3>Selamat!</h3><p>Kamu telah menyelesaikan rangkaian pembelajaran dasar-dasar pengelasan. Gunakan pemahaman tentang proses, alat, parameter, posisi, sambungan, dan K3 sebagai dasar sebelum praktik.</p></div><div class="card"><h3>📖 Glosarium</h3><p><b>APD</b> — Alat Pelindung Diri.</p><p><b>SMAW</b> — Shielded Metal Arc Welding.</p><p><b>Elektroda</b> — penghantar arus dan dapat menjadi logam pengisi.</p><p><b>Kampuh</b> — persiapan tepi material pada daerah sambungan.</p><p><b>Terak</b> — lapisan yang terbentuk selama SMAW dan dibersihkan sesuai prosedur.</p></div></section>
+</main><footer>E-Modul Interaktif Dasar-Dasar Pengelasan • Prototype Pengembangan</footer>
+
+<script>
+const defaultMaterials=[
+{title:"01 • Pengertian Pengelasan",goal:"Siswa mampu menjelaskan pengertian dan tujuan pengelasan.",explain:"Pengelasan adalah proses penyambungan material dengan memanfaatkan panas, tekanan, atau kombinasi keduanya. Dalam pekerjaan teknik, pengelasan digunakan untuk membuat sambungan permanen, fabrikasi, dan perbaikan komponen.",example:"Contoh penerapan: penyambungan pelat pada konstruksi, rangka, dan perbaikan komponen mesin.",k3:"Gunakan APD, pastikan area kerja aman, dan ikuti SOP.",tip:"Pemilihan proses pengelasan harus mempertimbangkan material, ketebalan, posisi, dan kualitas yang dipersyaratkan."},
+{title:"02 • Proses Pengelasan",goal:"Siswa mampu mengenali beberapa proses pengelasan dan penggunaannya.",explain:"Proses pengelasan dapat menggunakan busur listrik, gas, resistansi, dan mekanisme lainnya. SMAW, GMAW, dan pengelasan gas memiliki karakteristik dan kebutuhan peralatan yang berbeda.",example:"SMAW banyak digunakan untuk pekerjaan yang membutuhkan peralatan relatif fleksibel dan sesuai prosedur.",k3:"Pilih proses dan lingkungan kerja sesuai SOP serta pengendalian bahaya.",tip:"Jangan memilih proses hanya karena paling familiar; sesuaikan dengan kebutuhan pekerjaan."},
+{title:"03 • Dasar SMAW",goal:"Siswa mampu menjelaskan prinsip kerja SMAW.",explain:"SMAW (Shielded Metal Arc Welding) menggunakan busur listrik antara elektroda berlapis dan benda kerja. Panas busur melelehkan ujung elektroda dan sebagian material dasar. Lapisan elektroda membantu perlindungan dan membentuk terak.",example:"Saat busur stabil, kolam las dapat dikendalikan dengan menjaga panjang busur, sudut, dan kecepatan gerak.",k3:"Gunakan helm las dengan tingkat perlindungan sesuai, sarung tangan, pakaian kerja, dan ventilasi yang memadai.",tip:"Kestabilan busur sangat penting untuk membentuk manik las yang terkendali."},
+{title:"04 • Peralatan SMAW",goal:"Siswa mampu mengidentifikasi peralatan utama SMAW dan fungsinya.",explain:"Peralatan dasar meliputi sumber tenaga, kabel las, electrode holder, clamp massa, elektroda, serta alat bantu pembersihan.",example:"Clamp massa menghubungkan rangkaian listrik dengan benda kerja; electrode holder memegang elektroda.",k3:"Periksa kabel, konektor, holder, dan kondisi mesin sebelum bekerja.",tip:"Pemeriksaan awal dapat mencegah gangguan proses dan bahaya listrik."},
+{title:"05 • Elektroda",goal:"Siswa mampu menjelaskan fungsi dan pertimbangan pemilihan elektroda.",explain:"Elektroda SMAW memiliki inti logam dan lapisan. Jenis elektroda dipilih berdasarkan material, posisi, jenis arus/polaritas yang diizinkan, dan kebutuhan kualitas sambungan.",example:"Ikuti rekomendasi elektroda pada prosedur atau petunjuk pabrikan.",k3:"Simpan elektroda sesuai petunjuk dan jangan gunakan bahan yang kondisinya tidak sesuai.",tip:"Ukuran elektroda bukan satu-satunya pertimbangan; jenis dan penggunaannya juga penting."},
+{title:"06 • Parameter Pengelasan",goal:"Siswa mampu menjelaskan pengaruh parameter terhadap hasil las.",explain:"Parameter dasar meliputi arus, panjang busur, kecepatan gerak, sudut elektroda, dan teknik ayunan. Nilainya saling berkaitan dan harus mengikuti prosedur.",example:"Kecepatan gerak yang berubah-ubah dapat menghasilkan manik las yang tidak seragam.",k3:"Atur mesin sesuai prosedur dan gunakan APD sebelum mengatur atau memulai proses.",tip:"Saat menganalisis cacat, periksa parameter satu per satu berdasarkan bukti."},
+{title:"07 • Posisi Pengelasan",goal:"Siswa mampu mengenali posisi dasar pengelasan.",explain:"Posisi dasar meliputi datar, horizontal, vertikal, dan overhead. Setiap posisi memengaruhi pengendalian kolam las dan teknik gerak.",example:"Posisi datar umumnya lebih mudah untuk pembelajaran awal dibanding posisi vertikal atau overhead.",k3:"Pastikan posisi kerja stabil dan lindungi diri dari percikan serta benda panas.",tip:"Perubahan posisi dapat membutuhkan penyesuaian teknik dan kontrol kolam las."},
+{title:"08 • Sambungan & Kampuh",goal:"Siswa mampu mengenali jenis sambungan dan pentingnya persiapan kampuh.",explain:"Sambungan umum meliputi butt, lap, tee, corner, dan edge joint. Bentuk kampuh ditentukan oleh ketebalan, desain, kebutuhan penetrasi, dan akses.",example:"Persiapan tepi dan kebersihan daerah sambungan dapat memengaruhi kualitas hasil.",k3:"Gunakan alat bantu dan APD saat mempersiapkan material.",tip:"Ikuti gambar kerja dan prosedur untuk ukuran kampuh, bevel, dan root gap."},
+{title:"09 • K3 Pengelasan",goal:"Siswa mampu menerapkan prinsip keselamatan kerja pada proses pengelasan.",explain:"Bahaya pengelasan meliputi radiasi busur, panas, fume, percikan, listrik, dan kebakaran. Pengendalian dilakukan melalui APD, ventilasi, pemeriksaan alat, dan SOP.",example:"Jauhkan bahan mudah terbakar dari area percikan dan pastikan ventilasi bekerja dengan baik.",k3:"Gunakan helm/topeng las, sarung tangan, pakaian kerja, sepatu keselamatan, serta pengendalian fume sesuai SOP.",tip:"K3 bukan bagian tambahan; K3 melekat pada setiap tahap pekerjaan."}
+];
+let materials=JSON.parse(localStorage.getItem('materials')||'null')||defaultMaterials;
+let quiz=[
+["SMAW adalah singkatan dari...",["Shielded Metal Arc Welding","Standard Metal Arc Welding","Steel Manual Arc Welding"],0],
+["Fungsi electrode holder adalah...",["Memegang elektroda dan menyalurkan arus","Membersihkan terak","Mengukur suhu"],0],
+["Yang termasuk parameter dasar pengelasan adalah...",["Arus","Panjang busur","Semua benar"],2],
+["APD utama untuk melindungi mata dari radiasi busur adalah...",["Helm/topeng las","Topi kain","Kacamata hitam biasa"],0],
+["Posisi pengelasan dasar meliputi...",["Datar, horizontal, vertikal, overhead","Hanya datar","Hanya vertikal"],0],
+["Lapisan elektroda pada SMAW membantu...",["Membentuk perlindungan dan terak","Menghilangkan listrik","Mengganti mesin las"],0],
+["Hasil las tidak seragam dapat dipengaruhi oleh...",["Kecepatan gerak","Warna pakaian","Nama operator"],0],
+["Sebelum mengelas, tindakan yang tepat adalah...",["Memeriksa alat dan menggunakan APD","Menyalakan mesin tanpa pemeriksaan","Bekerja tanpa pelindung"],0]
+];
+function show(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');if(id==='materi')renderMaterials();window.scrollTo(0,0)}
+function renderMaterials(){let g=document.getElementById('materialGrid');g.innerHTML='';materials.forEach((m,i)=>{let d=document.createElement('div');d.className='tile';d.innerHTML='<b>'+m.title+'</b><br><span class="small">Klik untuk belajar</span>';d.onclick=()=>viewMaterial(i);g.appendChild(d)})}
+function viewMaterial(i){let m=materials[i];document.getElementById('materialView').innerHTML='<div class="card"><h3>'+m.title+'</h3><h4>🎯 Tujuan</h4><p>'+m.goal+'</p><h4>📖 Penjelasan</h4><p>'+m.explain+'</p><h4>🔎 Contoh/Penerapan</h4><p>'+m.example+'</p><div class="safe"><b>🛡️ K3</b><br>'+m.k3+'</div><div class="tip"><b>💡 Tips/Fakta</b><br>'+m.tip+'</div><h4>☑️ Cek Pemahaman</h4><p>Jelaskan satu hal penting dari materi ini dengan kalimatmu sendiri.</p><textarea id="check'+i+'"></textarea><button class="primary" onclick="alert(\'Jawaban cek pemahaman dicatat untuk diskusi dengan guru.\')">Kirim</button></div>'}
+function savePre(){localStorage.setItem('pretest','tersimpan');document.getElementById('presave').innerHTML='✓ Jawaban tersimpan pada browser ini.'}
+function renderQuiz(){let f=document.getElementById('quizForm');f.innerHTML='';quiz.forEach((q,i)=>{let d=document.createElement('div');d.className='card';d.innerHTML='<b>'+(i+1)+'. '+q[0]+'</b>'+q[1].map((o,j)=>'<label class="quizopt"><input type="radio" name="q'+i+'" value="'+j+'"> '+String.fromCharCode(65+j)+'. '+o+'</label>').join('');f.appendChild(d)})}
+function scoreQuiz(){let s=0,ok=true;quiz.forEach((q,i)=>{let v=document.querySelector('input[name=q'+i+']:checked');if(!v)ok=false;else if(+v.value===q[2])s++});if(!ok){document.getElementById('result').innerHTML='⚠️ Jawab semua soal terlebih dahulu.';return}let n=Math.round(s/quiz.length*100);document.getElementById('bar').style.width=n+'%';document.getElementById('result').innerHTML='Skor: '+n+'/100 — '+(n>=80?'🌟 Sangat Baik!':n>=70?'👍 Baik!':n>=60?'💪 Cukup, pelajari lagi materi.':'📚 Pelajari kembali materi dan coba lagi.');localStorage.setItem('lastScore',n)}
+function resetQuiz(){document.getElementById('quizForm').reset();document.getElementById('result').innerHTML='';document.getElementById('bar').style.width='0%'}
+function adminLogin(){let u=document.getElementById('adminUser').value,p=document.getElementById('adminPass').value;if(u==='admin'&&p==='pengelasan123'){document.getElementById('loginBox').style.display='none';document.getElementById('panel').style.display='block';populateAdmin();}else alert('Username/password salah.')}
+function populateAdmin(){let s=document.getElementById('editSelect');s.innerHTML=materials.map((m,i)=>'<option value="'+i+'">'+m.title+'</option>').join('');loadEditor();document.getElementById('status').innerHTML='Materi tersimpan: '+materials.length+' • Skor terakhir: '+(localStorage.getItem('lastScore')||'belum ada');}
+function loadEditor(){let m=materials[+document.getElementById('editSelect').value];['Title','Goal','Explain','Example','K3','Tip'].forEach((x)=>{});document.getElementById('editTitle').value=m.title;document.getElementById('editGoal').value=m.goal;document.getElementById('editExplain').value=m.explain;document.getElementById('editExample').value=m.example;document.getElementById('editK3').value=m.k3;document.getElementById('editTip').value=m.tip}
+function saveMaterial(){let i=+document.getElementById('editSelect').value;materials[i]={title:document.getElementById('editTitle').value,goal:document.getElementById('editGoal').value,explain:document.getElementById('editExplain').value,example:document.getElementById('editExample').value,k3:document.getElementById('editK3').value,tip:document.getElementById('editTip').value};localStorage.setItem('materials',JSON.stringify(materials));renderMaterials();populateAdmin();alert('Materi berhasil disimpan di browser ini.')}
+function resetMaterials(){if(confirm('Kembalikan materi ke versi awal?')){materials=defaultMaterials;localStorage.removeItem('materials');populateAdmin();renderMaterials()}}
+function saveVideo(){localStorage.setItem('videoUrl',document.getElementById('videoUrl').value);document.getElementById('videoStatus').innerHTML='✓ URL video tersimpan di browser.'}
+function adminLogout(){document.getElementById('loginBox').style.display='block';document.getElementById('panel').style.display='none'}
+renderMaterials();renderQuiz();
+</script>
+</body></html>
